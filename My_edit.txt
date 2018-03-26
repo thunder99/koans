@@ -1,0 +1,114 @@
+def test_array_literals_2
+    array = Array.new
+    array[0] = 1
+    array[1] = 2
+    array << 333
+    array[2] = 54
+    array << 150
+    assert_equal [1,2,54,150], array
+  end
+
+   class Test
+    def Sum(a)
+      s = 0
+        while a>0
+          s+=a%10
+          a/=10
+        end
+        s
+    end
+  end
+
+  def test_5
+    sum = Test.new
+    assert_equal 6, sum.Sum(123)
+    assert_equal 26, sum.Sum(6578)
+
+  end
+
+end
+
+def test_break_2_statement
+      j=5
+    s=3
+    while true
+      s+=s%j
+      break if s>15
+      j+=3
+    end
+    assert_equal 26, s
+  end
+
+  def test_for_statement_2
+    array = ["FISH","AND", "CHIPS"]
+    result = []
+    for item in array
+      result << item.downcase if item[0]=='F'
+    end
+    assert_equal ["fish"], result
+  end
+
+  def test_2
+    array = [5, 10, 15]
+    sum = 0
+    array.each { |item| sum += item + 3 }
+    assert_equal 39, sum
+  end
+
+  def test_2
+      assert_equal ["1", "2", "3"], "one-1-two-2-three-3".scan(/\d/)
+  end
+
+  def test_3
+      assert_equal ["3"], "one-1-two-2-three-3".scan(/\d+$/)
+  end
+
+  def test_4
+      assert_equal ["one", "", "1", "", "two", "", "2", "", "three", "", "3", ""], "one-1-two-2-three-3".scan(/\w*/)
+  end
+
+def test_4
+  a = "12345" 
+  b = 12345
+  assert_equal false, a == b
+  assert_equal true, a == b.to_s
+  end
+
+  def test_plus_concatenation_will_leave_the_original_strings_unmodified_2
+    hi = "Hello, "
+    there = "Worldddd!"
+    string=hi+there[0..4]
+    assert_equal "Hello, World", string
+    assert_equal 12, string.size
+  end
+
+  def test_2
+    a = "It was the best of times"
+    b = "It was the worst of times"
+    assert_equal false, a[11..14] == b[11..14]
+  end
+
+  def test_2
+      s = "Hello"
+      b = s.replace("World")
+      assert_equal "World", s
+      assert_equal "World", b
+  end
+
+  def test_3
+      s = "abc"
+      b = s.reverse
+      assert_equal "abc", s
+      assert_equal "cba", b
+  end
+
+  def test_2
+    symbol1 = :a_symbol
+    symbol2 = :a_symbol
+
+    assert_equal false, symbol1 == symbol2.to_s
+  end
+
+  def test_2
+    assert_equal :true_stuff, truth_value(false || true)
+  end
